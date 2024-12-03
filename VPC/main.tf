@@ -37,3 +37,14 @@ resource "google_compute_router_nat" "this" {
 
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
+
+resource "google_compute_firewall" "rules" {
+  name    = "allow-ssh"
+  network = "${var.name}-vpc"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+  source_ranges = ["0.0.0.0/0"]
+}

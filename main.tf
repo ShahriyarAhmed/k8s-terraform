@@ -18,3 +18,8 @@ module "VPC" {
     source = "./VPC"
 
 }
+
+module "Compute" {
+    source = "./Compute"
+    name = "vm-ubuntu-sherry"
+}
