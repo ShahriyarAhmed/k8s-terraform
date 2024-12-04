@@ -39,9 +39,9 @@ resource "google_compute_router_nat" "this" {
 }
 
 resource "google_compute_firewall" "rules" {
-  name    = "allow-ssh"
+  name    = "${var.name}-allow-ssh"
   network = "${var.name}-vpc"
-
+  description = "This rule allow traffic from everywhere to ssh into vms"
   allow {
     protocol = "tcp"
     ports    = ["22"]
