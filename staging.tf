@@ -23,3 +23,10 @@ module "Compute" {
     source = "./Compute"
     name = "vm-ubuntu-sherry"
 }
+
+module "ServiceAccounts" {
+  source = "./IAM"
+  num_of_acc=2
+  account_name=["artifact-registry", "compute"]
+  role=["roles/artifactregistry.admin","roles/compute.admin"]
+}
