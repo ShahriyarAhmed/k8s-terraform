@@ -7,7 +7,7 @@ variable "private_subnet" {
 }
 
 variable "private_subnet_ip_cidr_range" {
-    default = "10.0.1.0/24"
+    default = "10.0.8.0/21"
 }
 
 variable region {

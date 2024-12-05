@@ -9,9 +9,14 @@ resource "google_project_iam_member" "this" {
   project = "qureos-mig-gke"
   role    = local.role_list[count.index]
   member  = "serviceAccount:${google_service_account.this[count.index].email}"
+  depends_on = [ google_service_account.this ]
 }
 
 locals {
   account_list = tolist(var.account_name)
   role_list=tolist(var.role)
 }
+output "sa_email_k8s" {
+  value = google_service_account.this[2].email
+}
+
