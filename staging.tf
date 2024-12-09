@@ -28,7 +28,12 @@ module "ServiceAccounts" {
   source = "./IAM"
   num_of_acc=3
   account_name=["artifact-registry","compute","k8s-nodepool"]
-  role=["roles/artifactregistry.admin","roles/compute.instanceAdmin","roles/container.admin"]
+  #role=["","roles/compute.instanceAdmin","roles/container.admin"]
+  role = [
+  ["roles/artifactregistry.admin"], 
+  ["roles/compute.instanceAdmin"],
+  ["roles/container.admin","roles/artifactregistry.admin"]
+]
 }
 
 module "K8s_staging" {
@@ -37,8 +42,12 @@ module "K8s_staging" {
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 1
+  node_size = 2
   cluster_name = "qureos-staging-cluster"
   sa=module.ServiceAccounts.sa_email_k8s
   k8s_version = "1.30.5-gke.1443001"
+}
+
+output "sa" {
+  value=module.ServiceAccounts.sa_email_k8s
 }

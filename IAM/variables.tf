@@ -3,7 +3,7 @@ variable "account_name" {
 }
 
 variable "role" {
-  type    = set(string)
+ type = list(list(string))
 }
 
 variable "num_of_acc" {
