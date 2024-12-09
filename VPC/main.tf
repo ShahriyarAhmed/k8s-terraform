@@ -11,17 +11,8 @@ ip_cidr_range= var.private_subnet_ip_cidr_range
 region=var.region
 network=google_compute_network.this.id
 private_ip_google_access =true
-secondary_ip_range {
-    range_name    = "k8s-pod-range"
-    ip_cidr_range = "10.0.16.0/24"
-  }
-  secondary_ip_range {
-    range_name    = "k8s-service-range"
-    ip_cidr_range = "10.0.17.0/24"
-  }
-  depends_on = [google_compute_network.this]
+depends_on = [google_compute_network.this]
 }
-
 # Static External IP for the NAT Gateway
 resource "google_compute_address" "nat-ip" {
   name = "${var.name}-nat-ip"
