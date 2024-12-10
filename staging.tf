@@ -24,17 +24,40 @@ module "Compute" {
     name = "vm-ubuntu-sherry"
 }
 
-module "ServiceAccounts" {
+# module "ServiceAccounts" {
+#   source = "./IAM"
+#   num_of_acc=4
+#   account_name=["artifact-registry","compute","k8s-nodepool","github-actions"]
+#   role = [
+#   ["roles/artifactregistry.admin"], 
+#   ["roles/compute.instanceAdmin"],
+#   ["roles/container.admin","roles/artifactregistry.admin"],
+#   ["roles/artifactregistry.writer","roles/iam.serviceAccountTokenCreator"]
+# ]
+# }
+
+#service_accouts with roles
+module "artifact-registry-sa" {
   source = "./IAM"
-  num_of_acc=3
-  account_name=["artifact-registry","compute","k8s-nodepool"]
-  #role=["","roles/compute.instanceAdmin","roles/container.admin"]
-  role = [
-  ["roles/artifactregistry.admin"], 
-  ["roles/compute.instanceAdmin"],
-  ["roles/container.admin","roles/artifactregistry.admin"]
-]
+  account_name="artifact-registry"
+  role_list = ["roles/artifactregistry.admin"]
 }
+module "compute" {
+  source = "./IAM"
+  account_name="compute"
+  role_list = ["roles/compute.instanceAdmin"]
+}
+module "k8s-nodepool-sa" {
+  source = "./IAM"
+  account_name="k8s-nodepool"
+  role_list = ["roles/container.admin","roles/artifactregistry.admin"]
+}
+module "github-actions" {
+  source = "./IAM"
+  account_name="github-actions"
+  role_list =["roles/artifactregistry.writer","roles/iam.serviceAccountTokenCreator","roles/secretmanager.secretAccessor","roles/container.developer"]
+}
+
 
 module "K8s_staging" {
   source = "./K8s"
@@ -42,12 +65,19 @@ module "K8s_staging" {
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 2
+  node_size = 1
   cluster_name = "qureos-staging-cluster"
-  sa=module.ServiceAccounts.sa_email_k8s
+  sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.30.5-gke.1443001"
 }
 
-output "sa" {
-  value=module.ServiceAccounts.sa_email_k8s
+module "artifactregistry" {
+  source = "./Artifact-Registry"
+  name=["qureos-stg-frontend","qureos-stg-backend"]
+  num_of_repo = 2
+}
+
+module "secret-frontend" {
+  source = "./Secrets"
+  secret_id = "stg-frontend"
 }
