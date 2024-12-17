@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-frontend
+  name: stg-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-frontend
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-frontend:12371584555
+        name: stg-frontend
+        resources: {}
+status: {}
