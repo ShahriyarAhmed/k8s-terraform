@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-autopilot
+  name: stg-autopilot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-autopilot
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-autopilot
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/autopilot:12371530878
+        name: autopilot
+        resources: {}
+status: {}
