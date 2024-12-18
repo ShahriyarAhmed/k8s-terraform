@@ -55,7 +55,7 @@ module "k8s-nodepool-sa" {
 module "github-actions" {
   source = "./IAM"
   account_name="github-actions"
-  role_list =["roles/artifactregistry.writer","roles/iam.serviceAccountTokenCreator","roles/secretmanager.secretAccessor","roles/container.developer"]
+  role_list =["roles/artifactregistry.admin","roles/iam.serviceAccountTokenCreator","roles/secretmanager.secretAccessor","roles/container.developer","roles/storage.objectViewer"]
 }
 
 
@@ -65,7 +65,7 @@ module "K8s_staging" {
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 1
+  node_size = 01
   cluster_name = "qureos-staging-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.30.5-gke.1443001"
@@ -73,11 +73,23 @@ module "K8s_staging" {
 
 module "artifactregistry" {
   source = "./Artifact-Registry"
-  name=["qureos-stg-frontend","qureos-stg-backend"]
+  name=["qureos-stg","qureos-stg-1"]
   num_of_repo = 2
 }
 
-module "secret-frontend" {
+module "secret-frontend-stg" {
   source = "./Secrets"
   secret_id = "stg-frontend"
+}
+module "secret-backend-stg" {
+  source = "./Secrets"
+  secret_id = "stg-backend"
+}
+module "secret-inference-stg" {
+  source = "./Secrets"
+  secret_id = "stg-inference"
+}
+module "secret-autopilot-stg" {
+  source = "./Secrets"
+  secret_id = "stg-autopilot"
 }

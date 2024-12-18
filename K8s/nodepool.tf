@@ -11,8 +11,8 @@ resource "google_container_node_pool" "spot" {
   
   node_config {
     preemptible  = true
-    machine_type = "e2-medium"
-
+    machine_type = "e2-standard-2"
+    image_type = "UBUNTU_CONTAINERD"
     labels = {
       team = "devops"
     }
@@ -23,4 +23,5 @@ resource "google_container_node_pool" "spot" {
       "https://www.googleapis.com/auth/cloud-platform" 
     ]
   }
+
 }
