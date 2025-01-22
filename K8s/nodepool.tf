@@ -1,5 +1,6 @@
-resource "google_container_node_pool" "spot" {
-  name    = "spot"
+
+resource "google_container_node_pool" "dedicated" {
+  name    = "nodepool-dedicated"
   cluster = google_container_cluster.primary.name
 
   management {
@@ -10,7 +11,6 @@ resource "google_container_node_pool" "spot" {
   
   
   node_config {
-    preemptible  = true
     machine_type = "e2-standard-2"
     image_type = "UBUNTU_CONTAINERD"
     labels = {
