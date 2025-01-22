@@ -46,8 +46,7 @@ resource "google_compute_firewall" "rules" {
   network = "${var.name}-vpc"
   description = "This rule allow traffic from everywhere to ssh into vms"
   allow {
-    protocol = "tcp"
-    ports    = ["22"]
+    protocol = "all"
   }
   source_ranges = ["0.0.0.0/0"]
   depends_on = [google_compute_subnetwork.this]
