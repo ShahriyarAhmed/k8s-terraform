@@ -65,7 +65,7 @@ module "K8s_staging" {
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 01
+  node_size = 02
   cluster_name = "qureos-staging-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.30.5-gke.1443001"
@@ -92,4 +92,22 @@ module "secret-inference-stg" {
 module "secret-autopilot-stg" {
   source = "./Secrets"
   secret_id = "stg-autopilot"
+}
+
+module "startup-job" {
+  source = "./Job"
+  job_name = "qureos-staging-cluster-startup"
+  region="europe-west1"
+  image="europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/start:1"
+  schedule_cron = "0 9 * * 1-5"
+  timezone = "Asia/Karachi"
+}
+
+module "shutdown-job" {
+  source = "./Job"
+  job_name = "qureos-staging-cluster-shutdown"
+  region="europe-west1"
+  image="europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/shutdown:3"
+  schedule_cron = "0 21 * * 1-5"
+  timezone = "Asia/Karachi"
 }
