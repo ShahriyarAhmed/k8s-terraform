@@ -18,7 +18,7 @@ spec:
         app: stg-frontend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-frontend:12938541930
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-frontend:12950330152
         name: stg-frontend
         resources: {}
 status: {}
