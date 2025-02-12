@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-iris-agent
+  name: stg-iris-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-iris-agent
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-iris-agent
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-agent:13282435099
+        name: stg-iris-agent
+        resources: {}
+status: {}
