@@ -24,7 +24,7 @@ spec:
             secretKeyRef:
               name: stg-iris-agent
               key: PROMPT_MAKER_API
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-agent:13364906598
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-agent:13365068045
         name: stg-iris-agent
         resources: {}
 status: {}
