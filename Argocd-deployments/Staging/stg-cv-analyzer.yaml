@@ -18,7 +18,7 @@ spec:
         app: stg-cv-analyzer
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-cv-analyzer:13384766583
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-cv-analyzer:13384929886
         name: stg-cv-analyzer
         resources: {}
 status: {}
