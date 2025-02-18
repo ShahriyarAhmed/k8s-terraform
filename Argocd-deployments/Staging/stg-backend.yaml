@@ -18,7 +18,7 @@ spec:
         app: stg-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-backend:13392368386
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-backend:13394042156
         name: stg-backend
         resources: {}
 status: {}
