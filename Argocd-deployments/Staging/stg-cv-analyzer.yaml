@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-cv-analyzer
+  name: stg-cv-analyzer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-cv-analyzer
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-cv-analyzer
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-cv-analyzer:13384766583
+        name: stg-cv-analyzer
+        resources: {}
+status: {}
