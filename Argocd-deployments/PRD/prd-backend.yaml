@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-backend
+  name: prd-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-backend
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:13432243154
+        name: prd-backend
+        resources: {}
+status: {}
