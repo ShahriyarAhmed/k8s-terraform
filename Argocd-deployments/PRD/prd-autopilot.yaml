@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-autopilot
+  name: prd-autopilot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-autopilot
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-autopilot
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/autopilot:13451711806
+        name: autopilot
+        resources: {}
+status: {}
