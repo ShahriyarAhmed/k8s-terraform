@@ -17,7 +17,7 @@ module "K8s_prod" {
   network = module.VPC-prod.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 02
+  node_size = 0
   cluster_name = "qureos-prod-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.31.5-gke.1023000"

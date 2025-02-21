@@ -13,7 +13,11 @@ module "Storage" {
     source = "./Storage"
 
 }
+module "Storage-burj-line" {
+    source = "./Storage"
+    bucket_name = "burj-line-builders"
 
+}
 module "VPC" {
     source = "./VPC"
 
@@ -73,8 +77,8 @@ module "K8s_staging" {
 
 module "artifactregistry" {
   source = "./Artifact-Registry"
-  name=["qureos-stg","qureos-stg-1"]
-  num_of_repo = 2
+  name=["qureos-stg"]
+  num_of_repo = 1
 }
 
 module "secret-frontend-stg" {
@@ -93,7 +97,14 @@ module "secret-autopilot-stg" {
   source = "./Secrets"
   secret_id = "stg-autopilot"
 }
-
+module "secret-candidate-data" {
+  source = "./Secrets"
+  secret_id = "candidate-data"
+}
+module "secret-stg-iris-agent" {
+  source = "./Secrets"
+  secret_id = "stg-iris-agent"
+}
 module "startup-job" {
   source = "./Job"
   job_name = "qureos-staging-cluster-startup"
