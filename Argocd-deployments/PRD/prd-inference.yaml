@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-inference
+  name: prd-inference
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-inference
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-inference
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/inference-prod:13455193652
+        name: inference-prod
+        resources: {}
+status: {}
