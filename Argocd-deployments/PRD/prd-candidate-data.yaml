@@ -18,7 +18,7 @@ spec:
         app: prd-candidate-data
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prd-repo/candidate-data:13497821759
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/candidate-data:13497878550
         name: candidate-data
         resources: {}
 status: {}
