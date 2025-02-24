@@ -18,7 +18,7 @@ spec:
         app: prd-frontend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-frontend:13434990162
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-frontend:13494855851
         name: prd-frontend
         resources: {}
 status: {}
