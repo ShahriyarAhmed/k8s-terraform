@@ -18,7 +18,13 @@ spec:
         app: prd-places
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/places-prod:13493867561
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/places-prod:13519560509
         name: places-prod
-        resources: {}
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
 status: {}
