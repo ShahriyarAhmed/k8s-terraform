@@ -18,7 +18,7 @@ spec:
         app: prd-places
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/places-prod:13519560509
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/places-prod:13519608938
         name: places-prod
         resources:
           requests:
