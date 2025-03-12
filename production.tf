@@ -17,7 +17,9 @@ module "K8s_prod" {
   network = module.VPC-prod.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 0
+  min_node = 2
+  max_node = 4
+  machine_type = "custom-4-8192"
   cluster_name = "qureos-prod-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.31.5-gke.1023000"
@@ -47,4 +49,15 @@ module "secret-autopilot-prd" {
 module "secret-places-prd" {
   source = "./Secrets"
   secret_id = "prd-places"
+}
+
+module "secret-candidate-data-prd" {
+  source = "./Secrets"
+  secret_id = "prd-candidate-data"
+}
+
+
+module "secret-iris-prd" {
+  source = "./Secrets"
+  secret_id = "prd-iris-agent"
 }

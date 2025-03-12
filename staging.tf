@@ -59,7 +59,7 @@ module "k8s-nodepool-sa" {
 module "github-actions" {
   source = "./IAM"
   account_name="github-actions"
-  role_list =["roles/artifactregistry.admin","roles/iam.serviceAccountTokenCreator","roles/secretmanager.secretAccessor","roles/container.developer","roles/storage.objectViewer"]
+  role_list =["roles/artifactregistry.admin","roles/iam.serviceAccountTokenCreator","roles/secretmanager.secretAccessor","roles/container.developer","roles/storage.objectViewer", "roles/run.admin","roles/iam.serviceAccountUser"]
 }
 
 
@@ -69,7 +69,9 @@ module "K8s_staging" {
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 02
+  min_node = 2
+  max_node = 2
+  machine_type = "e2-standard-2"
   cluster_name = "qureos-staging-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.30.5-gke.1443001"

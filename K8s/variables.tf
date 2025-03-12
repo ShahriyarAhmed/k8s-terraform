@@ -4,7 +4,9 @@ variable "cluster_name" {
 variable "region" {  
 }
 
-variable  "node_size" {
+variable  "min_node" {
+}
+variable  "max_node" {
 }
 variable  "project_id" {
 }
@@ -13,6 +15,9 @@ variable "network" {
   
 }
 variable "subnet" {
+  
+}
+variable "machine_type" {
   
 }
 variable "sa" {
