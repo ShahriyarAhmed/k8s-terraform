@@ -7,11 +7,16 @@ resource "google_container_node_pool" "dedicated" {
     auto_repair  = true
     auto_upgrade = true
   }
-  node_count = var.node_size
+
+  autoscaling {
+    min_node_count = var.min_node
+    max_node_count = var.max_node
+    
+  }
   
   
   node_config {
-    machine_type = "e2-standard-2"
+    machine_type = var.machine_type
     image_type = "UBUNTU_CONTAINERD"
     labels = {
       team = "devops"

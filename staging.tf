@@ -13,7 +13,11 @@ module "Storage" {
     source = "./Storage"
 
 }
+module "Storage-burj-line" {
+    source = "./Storage"
+    bucket_name = "burj-line-builders"
 
+}
 module "VPC" {
     source = "./VPC"
 
@@ -55,7 +59,7 @@ module "k8s-nodepool-sa" {
 module "github-actions" {
   source = "./IAM"
   account_name="github-actions"
-  role_list =["roles/artifactregistry.admin","roles/iam.serviceAccountTokenCreator","roles/secretmanager.secretAccessor","roles/container.developer","roles/storage.objectViewer"]
+  role_list =["roles/artifactregistry.admin","roles/iam.serviceAccountTokenCreator","roles/secretmanager.secretAccessor","roles/container.developer","roles/storage.objectViewer", "roles/run.admin","roles/iam.serviceAccountUser"]
 }
 
 
@@ -65,7 +69,9 @@ module "K8s_staging" {
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  node_size = 02
+  min_node = 2
+  max_node = 2
+  machine_type = "e2-standard-2"
   cluster_name = "qureos-staging-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.30.5-gke.1443001"
@@ -73,8 +79,8 @@ module "K8s_staging" {
 
 module "artifactregistry" {
   source = "./Artifact-Registry"
-  name=["qureos-stg","qureos-stg-1"]
-  num_of_repo = 2
+  name=["qureos-stg"]
+  num_of_repo = 1
 }
 
 module "secret-frontend-stg" {
@@ -93,7 +99,14 @@ module "secret-autopilot-stg" {
   source = "./Secrets"
   secret_id = "stg-autopilot"
 }
-
+module "secret-candidate-data" {
+  source = "./Secrets"
+  secret_id = "candidate-data"
+}
+module "secret-stg-iris-agent" {
+  source = "./Secrets"
+  secret_id = "stg-iris-agent"
+}
 module "startup-job" {
   source = "./Job"
   job_name = "qureos-staging-cluster-startup"
