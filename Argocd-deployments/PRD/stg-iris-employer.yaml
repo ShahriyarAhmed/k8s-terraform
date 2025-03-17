@@ -18,7 +18,7 @@ spec:
         app: stg-iris-employer
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/iris-employer:13895796266
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/iris-employer:13895884491
         name: iris-employer
         resources: {}
 status: {}
