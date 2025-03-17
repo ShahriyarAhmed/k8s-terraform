@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-iris-employer
+  name: stg-iris-employer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-iris-employer
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-iris-employer
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/iris-employer:13895796266
+        name: iris-employer
+        resources: {}
+status: {}
