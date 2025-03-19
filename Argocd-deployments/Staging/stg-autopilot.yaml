@@ -18,7 +18,7 @@ spec:
         app: stg-autopilot
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/autopilot:13892402861
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/autopilot:13944372013
         name: autopilot
         resources: {}
 status: {}
