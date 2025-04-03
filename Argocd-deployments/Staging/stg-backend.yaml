@@ -20,7 +20,7 @@ spec:
       containers:
       - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-backend:14238683520
         name: stg-backend
-        resources:{}
+        resources: {}
         livenessProbe:
           httpGet:
             path: /healthcheck
