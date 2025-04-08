@@ -18,7 +18,19 @@ spec:
         app: stg-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-backend:14306804909
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-backend:14326151296
         name: stg-backend
-        resources: {}
+        resources:{}
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4003
+          initialDelaySeconds: 90
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4003
+          initialDelaySeconds: 90
+          periodSeconds: 5
 status: {}
