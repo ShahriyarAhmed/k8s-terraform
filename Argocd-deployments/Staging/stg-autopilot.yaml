@@ -18,7 +18,19 @@ spec:
         app: stg-autopilot
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/autopilot:13962464446
-        name: autopilot
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/autopilot:14351377673
+        name: stg-autopilot
         resources: {}
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4003
+          initialDelaySeconds: 90
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4003
+          initialDelaySeconds: 90
+          periodSeconds: 5
 status: {}
