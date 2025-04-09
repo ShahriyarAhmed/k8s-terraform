@@ -18,7 +18,19 @@ spec:
         app: prd-autopilot
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/autopilot:13962460453
-        name: autopilot
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/autopilott:14353980075
+        name: prd-autopilot
         resources: {}
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8900
+          initialDelaySeconds: 90
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8900
+          initialDelaySeconds: 90
+          periodSeconds: 5
 status: {}
