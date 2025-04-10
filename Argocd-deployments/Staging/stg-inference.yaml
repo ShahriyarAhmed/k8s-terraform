@@ -18,7 +18,19 @@ spec:
         app: stg-inference
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/inference:14055509088
-        name: inference
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/inference:14374081807
+        name: stg-inference
         resources: {}
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8900
+          initialDelaySeconds: 90
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8900
+          initialDelaySeconds: 90
+          periodSeconds: 5
 status: {}
