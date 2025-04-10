@@ -18,7 +18,19 @@ spec:
         app: prd-inference
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/inference-prod:14055509076
-        name: inference-prod
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/inference-prod:14374894577
+        name: prd-inference
         resources: {}
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8900
+          initialDelaySeconds: 90
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8900
+          initialDelaySeconds: 90
+          periodSeconds: 5
 status: {}
