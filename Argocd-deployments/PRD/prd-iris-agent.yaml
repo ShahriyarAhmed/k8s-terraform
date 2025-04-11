@@ -18,7 +18,7 @@ spec:
         app: prd-iris-agent
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/iris-agent:14378829183
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/iris-agent:14397014723
         name: iris-agent
         resources: {}
 status: {}
