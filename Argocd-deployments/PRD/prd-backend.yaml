@@ -18,12 +18,12 @@ spec:
         app: prd-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:14539446362
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:14539902493
         name: prd-backend
         resources:
           requests:
-            cpu: "1000m"
-            memory: "900Mi"
+            cpu: "700m"
+            memory: "1100Mi"
         livenessProbe:
           httpGet:
             path: /healthcheck
