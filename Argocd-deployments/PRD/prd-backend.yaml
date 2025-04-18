@@ -18,16 +18,17 @@ spec:
         app: prd-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:14540325481
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:14540832427
         name: prd-backend
         resources:
           requests:
-            cpu: "800m"
+            cpu: "700m"
             memory: "1100Mi"
         readinessProbe:
           httpGet:
             path: /healthcheck
             port: 4003
           initialDelaySeconds: 90
-          periodSeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 5
 status: {}
