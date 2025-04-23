@@ -6,7 +6,7 @@ metadata:
     app: prd-backend
   name: prd-backend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: prd-backend
@@ -18,7 +18,7 @@ spec:
         app: prd-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:14540832427
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:14613073945
         name: prd-backend
         resources:
           requests:
