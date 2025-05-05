@@ -6,7 +6,7 @@ metadata:
     app: prd-resume-builder
   name: prd-resume-builder
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: prd-resume-builder
@@ -18,6 +18,6 @@ spec:
         app: prd-resume-builder
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/resume-builder-prod:14830501311
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/resume-builder-prod:14830606462
         name: prd-resume-builder
 status: {}
