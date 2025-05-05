@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-misc-api
+  name: prd-misc-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prd-misc-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-misc-api
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-misc-api:14835633070
+        name: prd-misc-api
+status: {}
