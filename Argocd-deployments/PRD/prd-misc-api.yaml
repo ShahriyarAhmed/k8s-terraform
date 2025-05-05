@@ -6,7 +6,7 @@ metadata:
     app: prd-misc-api
   name: prd-misc-api
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: prd-misc-api
@@ -18,6 +18,6 @@ spec:
         app: prd-misc-api
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-misc-api:14835633070
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/misc-api:14835706514
         name: prd-misc-api
 status: {}
