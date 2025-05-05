@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-resume-builder
+  name: prd-resume-builder
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prd-resume-builder
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-resume-builder
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/resume-builder-prod:14830501311
+        name: prd-resume-builder
+status: {}
