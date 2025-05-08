@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-ai-screening
+  name: prd-ai-screening
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-ai-screening
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-ai-screening
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-ai-screening:14913343961
+        name: prd-ai-screening
+status: {}
