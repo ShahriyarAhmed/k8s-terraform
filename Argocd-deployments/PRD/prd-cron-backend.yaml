@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-cron-backend
+  name: prd-cron-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-cron-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-cron-backend
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-cron-backend:14913878210
+        name: prd-cron-backend
+status: {}
