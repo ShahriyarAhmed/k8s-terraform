@@ -4,7 +4,11 @@ module "VPC-prod" {
     private_subnet = "prod-qureos-private-subnet"
     private_subnet_ip_cidr_range = "20.0.0.0/16"
 }
-
+module "iris-api-call" {
+  source = "./IAM"
+  account_name="iris-api-call"
+  role_list =["roles/storage.admin"]
+}
 module "artifactregistry-prod" {
   source = "./Artifact-Registry"
   name=["qureos-prod"]
@@ -13,16 +17,22 @@ module "artifactregistry-prod" {
 
 module "K8s_prod" {
   source = "./K8s"
+  is_spot = "false"
   subnet = module.VPC-prod.subnet_name
   network = module.VPC-prod.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  min_node = 2
-  max_node = 4
-  machine_type = "custom-4-8192"
+  min_node = 1
+  max_node = 2
+  machine_type = "e2-standard-4"
   cluster_name = "qureos-prod-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.31.5-gke.1023000"
+  node_locations = [
+   "europe-west1-b" ,
+   "europe-west1-c" ,
+   "europe-west1-d"
+  ]
 }
 
  
@@ -60,4 +70,9 @@ module "secret-candidate-data-prd" {
 module "secret-iris-prd" {
   source = "./Secrets"
   secret_id = "prd-iris-agent"
+}
+
+module "Storage-iris" {
+    source = "./Storage"
+    bucket_name = "iris-recordings"
 }
