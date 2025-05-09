@@ -6,14 +6,18 @@ resource "google_container_cluster" "primary" {
   network                  = var.network
   subnetwork               = var.subnet
   logging_service          = "logging.googleapis.com/kubernetes"
-  monitoring_service       = "monitoring.googleapis.com/kubernetes"
+  monitoring_service       = var.monitoring
   networking_mode          = "VPC_NATIVE"
 
   # Optional, if you want multi-zonal cluster
-  node_locations = [
-   "${var.region}-b" 
-  ]
-
+  node_locations = var.node_locations
+  maintenance_policy {
+    recurring_window {
+        end_time   = "2025-04-12T19:00:00Z"
+        recurrence = "FREQ=WEEKLY;BYDAY=SA"
+        start_time = "2025-04-11T19:00:00Z"
+      }
+  }
   addons_config {
     http_load_balancing {
       disabled = false

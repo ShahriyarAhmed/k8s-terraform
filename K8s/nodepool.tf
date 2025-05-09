@@ -18,6 +18,7 @@ resource "google_container_node_pool" "dedicated" {
   node_config {
     machine_type = var.machine_type
     image_type = "UBUNTU_CONTAINERD"
+    #spot= var.is_spot
     labels = {
       team = "devops"
     }
@@ -28,5 +29,5 @@ resource "google_container_node_pool" "dedicated" {
       "https://www.googleapis.com/auth/cloud-platform" 
     ]
   }
-
+  
 }

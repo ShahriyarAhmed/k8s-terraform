@@ -26,3 +26,11 @@ variable "sa" {
 variable "k8s_version" {
   
 }
+variable "is_spot" {
+}
+variable "monitoring"{
+    default = "monitoring.googleapis.com/kubernetes"
+}
+variable node_locations{
+    type=list(string)
+}

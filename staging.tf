@@ -54,7 +54,7 @@ module "compute" {
 module "k8s-nodepool-sa" {
   source = "./IAM"
   account_name="k8s-nodepool"
-  role_list = ["roles/container.admin","roles/artifactregistry.admin"]
+  role_list = ["roles/container.admin","roles/artifactregistry.admin","roles/container.defaultNodeServiceAccount"]
 }
 module "github-actions" {
   source = "./IAM"
@@ -65,16 +65,21 @@ module "github-actions" {
 
 module "K8s_staging" {
   source = "./K8s"
+  is_spot = "true"
   subnet = module.VPC.subnet_name
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  min_node = 2
-  max_node = 2
+  min_node = 1
+  max_node = 1
   machine_type = "e2-standard-2"
   cluster_name = "qureos-staging-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.30.5-gke.1443001"
+  monitoring = "none"
+  node_locations = [
+   "europe-west1-b" 
+  ]
 }
 
 module "artifactregistry" {
@@ -106,6 +111,10 @@ module "secret-candidate-data" {
 module "secret-stg-iris-agent" {
   source = "./Secrets"
   secret_id = "stg-iris-agent"
+}
+module "secret-iris-employer-stg" {
+  source = "./Secrets"
+  secret_id = "stg-iris-employer"
 }
 module "startup-job" {
   source = "./Job"
