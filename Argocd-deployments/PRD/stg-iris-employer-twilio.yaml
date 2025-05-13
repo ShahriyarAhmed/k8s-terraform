@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-iris-employer-twilio
+  name: stg-iris-employer-twilio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-iris-employer-twilio
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-iris-employer-twilio
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-employer-twilio:14992776863
+        name: stg-iris-employer-twilio
+status: {}
