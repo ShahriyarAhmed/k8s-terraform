@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-candidate-livekit
+  name: prd-candidate-livekit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-candidate-livekit
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-candidate-livekit
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-livekit:15251860841
+        name: prd-candidate-livekit
+status: {}
