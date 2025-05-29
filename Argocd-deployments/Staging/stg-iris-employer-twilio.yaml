@@ -18,6 +18,6 @@ spec:
         app: stg-iris-employer-twilio
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-employer-twilio:15021292060
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-employer-twilio:15324986731
         name: stg-iris-employer-twilio
 status: {}
