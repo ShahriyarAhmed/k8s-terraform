@@ -20,4 +20,8 @@ spec:
       containers:
       - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-ai-screening:15324892396
         name: prd-ai-screening
+        resources:
+          requests:
+            cpu: "1"
+            memory: "1Gi"
 status: {}
