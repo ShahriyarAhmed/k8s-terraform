@@ -22,6 +22,6 @@ spec:
         name: prd-ai-screening
         resources:
           requests:
-            cpu: "1"
-            memory: "1Gi"
+            cpu: "2"
+            memory: "1.5Gi"
 status: {}
