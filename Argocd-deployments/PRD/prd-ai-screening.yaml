@@ -18,6 +18,6 @@ spec:
         app: prd-ai-screening
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-ai-screening:15628276416
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-ai-screening:15628317438
         name: prd-ai-screening
 status: {}
