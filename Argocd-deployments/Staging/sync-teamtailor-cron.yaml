@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: sync-teamtailor-cron
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/sync-teamtailor-cron:15702072598
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/sync-teamtailor-cron:15703954729
           restartPolicy: Never
