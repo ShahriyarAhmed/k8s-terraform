@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: candidate-pipeline-cron
+spec:
+  schedule: "*/5 * * * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: candidate-pipeline
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/candidate-pipeline:15704111492
+          restartPolicy: Never
