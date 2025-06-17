@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: sync-teamtailor-cron
+spec:
+  schedule: "0 */2 * * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: sync-teamtailor-cron
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/sync-teamtailor-cron:15701367279
+          restartPolicy: Never
