@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: candidate-pipeline
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/candidate-pipeline:15704369200
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/candidate-pipeline:15705601035
           restartPolicy: Never
