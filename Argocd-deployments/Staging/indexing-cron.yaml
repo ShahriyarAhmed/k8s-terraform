@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: indexing-cron
+spec:
+  schedule: "*/5 * * * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: indexing-cron
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/indexing-cron:15726963340
+          restartPolicy: Never
