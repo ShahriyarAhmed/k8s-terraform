@@ -18,6 +18,6 @@ spec:
         app: prd-candidate-livekit
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-livekit:15727031502
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-livekit:15732358815
         name: prd-candidate-livekit
 status: {}
