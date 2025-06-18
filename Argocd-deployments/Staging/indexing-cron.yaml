@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: indexing-cron
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "0 0 * * *"
   timeZone: "Asia/Karachi"
   jobTemplate:
     spec:
@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: indexing-cron
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/indexing-cron:15726963340
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/indexing-cron:15727214603
           restartPolicy: Never
