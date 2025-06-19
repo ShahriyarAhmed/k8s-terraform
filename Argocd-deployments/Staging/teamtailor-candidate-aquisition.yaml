@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: teamtailor-candidate-aquisition-cron
 spec:
-  schedule: "*/20 * * * *"
+  schedule: "0 0 * * *"
   timeZone: "Asia/Karachi"
   jobTemplate:
     spec:
@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: teamtailor-candidate-aquisition
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-candidate-aquisition:15755587469
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-candidate-aquisition:15756144544
           restartPolicy: Never
