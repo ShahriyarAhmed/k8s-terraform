@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: teamtailor-candidate-aquisition-cron
+spec:
+  schedule: "*/20 * * * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: teamtailor-candidate-aquisition
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-candidate-aquisition:15755445096
+          restartPolicy: Never
