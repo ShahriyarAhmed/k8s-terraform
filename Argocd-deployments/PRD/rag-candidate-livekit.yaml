@@ -18,6 +18,6 @@ spec:
         app: rag-candidate-livekit
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/rag-candidate-livekit:15896767216
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/rag-candidate-livekit:15898493664
         name: rag-candidate-livekit
 status: {}
