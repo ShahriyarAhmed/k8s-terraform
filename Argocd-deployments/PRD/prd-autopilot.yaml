@@ -18,7 +18,7 @@ spec:
         app: prd-autopilot
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/autopilot:16115959461
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/autopilot:16116843583
         name: prd-autopilot
         resources: {}
         livenessProbe:
