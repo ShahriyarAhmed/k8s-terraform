@@ -18,7 +18,7 @@ spec:
         app: prd-inference
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/inference-prod:16114957380
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/inference-prod:16118702044
         name: inference-prod
         resources: {}
 status: {}
