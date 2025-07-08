@@ -18,7 +18,7 @@ spec:
         app: stg-inference
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/inference:16118702056
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/inference:16136442463
         name: inference
         resources: {}
 status: {}
