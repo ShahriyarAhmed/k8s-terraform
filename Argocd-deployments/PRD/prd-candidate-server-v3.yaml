@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-candidate-server-v3
+  name: prd-candidate-server-v3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-candidate-server-v3
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-candidate-server-v3
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-server-v3:16563616239
+        name: prd-candidate-server-v3
+status: {}
