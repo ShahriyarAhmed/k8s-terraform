@@ -18,6 +18,6 @@ spec:
         app: prd-candidate-server-v3
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-server-v3:16596820425
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-server-v3:16605043618
         name: prd-candidate-server-v3
 status: {}
