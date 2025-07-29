@@ -18,6 +18,6 @@ spec:
         app: stg-candidate-server-v3
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-candidate-server-v3:16563616236
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-candidate-server-v3:16596820396
         name: stg-candidate-server-v3
 status: {}
