@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-recruiter-referral
+  name: prd-recruiter-referral
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-recruiter-referral
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-recruiter-referral
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-recruiter-referral:16616056863
+        name: prd-recruiter-referral
+status: {}
