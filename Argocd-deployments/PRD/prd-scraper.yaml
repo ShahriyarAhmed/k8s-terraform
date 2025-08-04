@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: prd-scraper
+  name: prd-scraper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prd-scraper
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: prd-scraper
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/scraper:16718170094
+        name: prd-scraper
+status: {}
