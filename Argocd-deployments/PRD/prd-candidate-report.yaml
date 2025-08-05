@@ -18,6 +18,6 @@ spec:
         app: prd-candidate-report
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-report:16648427698
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-candidate-report:16741394794
         name: prd-candidate-report
 status: {}
