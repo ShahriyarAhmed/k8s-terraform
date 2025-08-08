@@ -18,6 +18,6 @@ spec:
         app: prd-av-agent-frontend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-av-agent-frontend:16831195504
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-av-agent-frontend:16831336720
         name: prd-av-agent-frontend
 status: {}
