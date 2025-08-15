@@ -18,6 +18,6 @@ spec:
         app: stg-recruiter-referral
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-recruiter-referral:16802612461
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-recruiter-referral:16988573938
         name: stg-recruiter-referral
 status: {}
