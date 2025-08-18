@@ -18,6 +18,6 @@ spec:
         app: prd-scraper
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/scraper:16880066517
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/scraper:17035012290
         name: prd-scraper
 status: {}
