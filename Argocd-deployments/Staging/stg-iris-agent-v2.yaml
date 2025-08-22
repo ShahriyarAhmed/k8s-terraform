@@ -18,7 +18,7 @@ spec:
         app: stg-iris-agent-v2
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-agent-v2:17122926949
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-iris-agent-v2:17154180139
         name: stg-iris-agent-v2
         resources: {}
 status: {}
