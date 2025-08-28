@@ -18,7 +18,7 @@ spec:
         app: stg1-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg1-backend:17268744006
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg1-backend:17289778967
         name: stg1-backend
         resources: {}
         livenessProbe:
