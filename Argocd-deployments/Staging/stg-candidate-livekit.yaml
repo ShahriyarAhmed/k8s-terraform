@@ -18,6 +18,6 @@ spec:
         app: stg-candidate-livekit
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-candidate-livekit:17361469557
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-candidate-livekit:17370482253
         name: stg-candidate-livekit
 status: {}
