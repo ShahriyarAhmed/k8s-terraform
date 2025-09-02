@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-project-bb
+  name: stg-project-bb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-project-bb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-project-bb
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-project-bb:17402555935
+        name: stg-project-bb
+status: {}
