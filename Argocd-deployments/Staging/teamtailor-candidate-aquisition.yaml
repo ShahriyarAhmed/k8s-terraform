@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: teamtailor-candidate-aquisition
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-candidate-aquisition:17296631682
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-candidate-aquisition:17461555501
           restartPolicy: Never
