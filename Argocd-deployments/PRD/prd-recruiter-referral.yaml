@@ -18,6 +18,6 @@ spec:
         app: prd-recruiter-referral
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-recruiter-referral:17455072830
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-recruiter-referral:17545928202
         name: prd-recruiter-referral
 status: {}
