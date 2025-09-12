@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: prd-iris-agent-v2
   name: prd-iris-agent-v2
@@ -13,12 +12,11 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: prd-iris-agent-v2
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-iris-agent-v2:17368420910
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-iris-agent-v2:17670794038
         name: prd-iris-agent-v2
         resources: {}
 status: {}
