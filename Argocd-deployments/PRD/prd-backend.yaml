@@ -5,7 +5,7 @@ metadata:
     app: prd-backend
   name: prd-backend
 spec:
-  replicas: 5   # baseline matches HPA minReplicas
+  replicas: 5
   selector:
     matchLabels:
       app: prd-backend
@@ -20,7 +20,7 @@ spec:
         app: prd-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:18077284665
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:18079991707
         name: prd-backend
         resources:
           requests:
