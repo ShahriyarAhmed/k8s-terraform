@@ -18,6 +18,6 @@ spec:
         app: stg-project-bb
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-project-bb:18089260672
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-project-bb:18090714344
         name: stg-project-bb
 status: {}
