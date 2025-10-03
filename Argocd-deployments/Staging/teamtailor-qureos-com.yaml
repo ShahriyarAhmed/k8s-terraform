@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teamtailor-qureos-com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: teamtailor-qureos-com
+  template:
+    metadata:
+      labels:
+        app: teamtailor-qureos-com
+    spec:
+      containers:
+      - name: teamtailor-qureos-com
+        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-qureos-com:18218522322
