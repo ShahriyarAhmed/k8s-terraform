@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forms-qureos-com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forms-qureos-com
+  template:
+    metadata:
+      labels:
+        app: forms-qureos-com
+    spec:
+      containers:
+      - name: forms-qureos-com
+        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/forms-qureos-com:18324570127
