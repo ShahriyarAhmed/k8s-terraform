@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: elfsight-cron
+spec:
+  schedule: "0 * * * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: elfsight
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/elfsight:18369429347
+          restartPolicy: Never
