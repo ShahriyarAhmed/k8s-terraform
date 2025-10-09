@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: forms-qureos-com
-        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/forms-qureos-com:18375683446
+        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/forms-qureos-com:18377679744
