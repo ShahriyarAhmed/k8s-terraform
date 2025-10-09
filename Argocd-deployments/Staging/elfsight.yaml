@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: elfsight
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/elfsight:18375683443
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/elfsight:18377679764
           restartPolicy: Never
