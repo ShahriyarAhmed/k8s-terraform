@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: teamtailor-qureos-com
-        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-qureos-com:18345205259
+        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/teamtailor-qureos-com:18399915069
