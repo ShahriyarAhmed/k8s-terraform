@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: zoho-pipeline
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/zoho-pipeline:18839658844
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/zoho-pipeline:18853820268
           restartPolicy: Never
