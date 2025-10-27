@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: zoho-pipeline-cron
+spec:
+  schedule: "0 */6 * * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: zoho-pipeline
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/zoho-pipeline:18839538445
+          restartPolicy: Never
