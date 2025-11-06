@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: job-qureos-com
-        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/job-qureos-com:18399976755
+        image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/job-qureos-com:19130321867
