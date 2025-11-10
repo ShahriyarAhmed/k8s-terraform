@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: sitemap-submission-cron
+spec:
+  schedule: "0 0 */2 * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: sitemap-submission
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/sitemap-submission:19225052337
+          restartPolicy: Never
