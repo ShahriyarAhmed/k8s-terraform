@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: jobg8-cron
+spec:
+  schedule: "0 */3 * * *"
+  timeZone: "Asia/Karachi"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: jobg8
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/jobg8:19288938935
+          restartPolicy: Never
