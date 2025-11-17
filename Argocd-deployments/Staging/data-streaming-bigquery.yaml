@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: data-streaming-bigquery
+  name: data-streaming-bigquery
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-streaming-bigquery
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: data-streaming-bigquery
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/data-streaming-bigquery:19428041493
+        name: data-streaming-bigquery
+status: {}
