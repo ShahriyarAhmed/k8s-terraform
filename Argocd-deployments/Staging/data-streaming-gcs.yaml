@@ -18,6 +18,6 @@ spec:
         app: data-streaming-gcs
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/data-streaming-gcs:19430279306
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/data-streaming-gcs:19444123345
         name: data-streaming-gcs
 status: {}
