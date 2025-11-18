@@ -18,6 +18,6 @@ spec:
         app: data-streaming-mixpanel
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/data-streaming-mixpanel:19465935285
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/data-streaming-mixpanel:19466360526
         name: data-streaming-mixpanel
 status: {}
