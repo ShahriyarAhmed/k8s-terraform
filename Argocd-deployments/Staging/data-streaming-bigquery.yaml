@@ -18,6 +18,6 @@ spec:
         app: data-streaming-bigquery
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/data-streaming-bigquery:19495059939
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/data-streaming-bigquery:19495524162
         name: data-streaming-bigquery
 status: {}
