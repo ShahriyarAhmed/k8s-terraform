@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: jobg8
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/jobg8:19890321465
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/jobg8:20029063789
           restartPolicy: Never
