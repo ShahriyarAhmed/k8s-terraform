@@ -18,6 +18,6 @@ spec:
         app: prd-cron-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-cron-backend:20368398117
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-cron-backend:20369153129
         name: prd-cron-backend
 status: {}
