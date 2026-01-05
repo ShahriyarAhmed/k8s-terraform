@@ -18,7 +18,7 @@ spec:
         app: stg-autopilot
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/autopilot:19425351587
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/autopilot:20716754938
         name: stg-autopilot
         resources: {}
         livenessProbe:
