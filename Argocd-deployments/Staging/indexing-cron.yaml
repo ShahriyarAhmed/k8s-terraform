@@ -12,5 +12,5 @@ spec:
         spec:
           containers:
           - name: indexing-cron
-            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/indexing-cron:17063547527
+            image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/indexing-cron:20716541899
           restartPolicy: Never
