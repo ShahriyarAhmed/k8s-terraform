@@ -18,6 +18,6 @@ spec:
         app: prd-resume-builder
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/resume-builder-prod:20852777805
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/resume-builder-prod:20852895746
         name: prd-resume-builder
 status: {}
