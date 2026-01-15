@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: stg-inference
+  name: stg-inference
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-inference
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: stg-inference
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/inference:21024821376
+        name: inference
+        resources: {}
+status: {}
