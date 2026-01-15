@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg1-backend
+  name: stg1-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg1-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg1-backend
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg1-backend:21024064554
+        name: stg1-backend
+        resources: {}
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4003
+          initialDelaySeconds: 90
+          timeoutSeconds: 5
+          periodSeconds: 10
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4003
+          initialDelaySeconds: 90
+          timeoutSeconds: 5
+          periodSeconds: 10
+          failureThreshold: 5
+status: {}
