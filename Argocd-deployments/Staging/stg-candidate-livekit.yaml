@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-candidate-livekit
+  name: stg-candidate-livekit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-candidate-livekit
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-candidate-livekit
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-candidate-livekit:21058401667
+        name: stg-candidate-livekit
+status: {}
