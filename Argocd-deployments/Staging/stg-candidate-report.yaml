@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stg-candidate-report
+  name: stg-candidate-report
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-candidate-report
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stg-candidate-report
+    spec:
+      containers:
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/stg-candidate-report:21058443859
+        name: stg-candidate-report
+status: {}
