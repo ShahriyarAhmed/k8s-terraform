@@ -18,6 +18,6 @@ spec:
         app: prd-misc-api
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/misc-api:21663463864
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/misc-api:21663491735
         name: prd-misc-api
 status: {}
