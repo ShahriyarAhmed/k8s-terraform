@@ -20,7 +20,7 @@ spec:
         app: prd-backend
     spec:
       containers:
-      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:21935486417
+      - image: europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-prod-repo/prd-backend:21936155388
         name: prd-backend
         resources:
           requests:
