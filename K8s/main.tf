@@ -5,7 +5,7 @@ resource "google_container_cluster" "primary" {
   initial_node_count       = 1
   network                  = var.network
   subnetwork               = var.subnet
-  logging_service          = "logging.googleapis.com/kubernetes"
+  logging_service          = var.logging
   monitoring_service       = var.monitoring
   networking_mode          = "VPC_NATIVE"
 

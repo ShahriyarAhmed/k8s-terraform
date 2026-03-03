@@ -15,3 +15,12 @@ variable "private_subnet_ip_cidr_range_2" {
 variable region {
     default="europe-west1"
 }
+
+variable "additional-subnets" {
+  description = "List of subnet configurations"
+  type = list(object({
+    name   = string
+    region = string
+    cidr   = string
+  }))
+}

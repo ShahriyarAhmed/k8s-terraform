@@ -3,7 +3,10 @@ module "VPC-prod" {
     name="prod-qureos-mig"
     private_subnet = "prod-qureos-private-subnet"
     private_subnet_ip_cidr_range = "20.0.0.0/16"
+
+    additional-subnets = []
 }
+
 module "iris-api-call" {
   source = "./IAM"
   account_name="iris-api-call"
@@ -18,13 +21,13 @@ module "artifactregistry-prod" {
 module "K8s_prod" {
   source = "./K8s"
   is_spot = "false"
-  subnet = module.VPC-prod.subnet_name
+  subnet = "prod-qureos-private-subnet-subnetwork"
   network = module.VPC-prod.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
   min_node = 1
   max_node = 2
-  machine_type = "e2-standard-4"
+  machine_type = "custom-6-20480"
   cluster_name = "qureos-prod-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.31.5-gke.1023000"
@@ -33,6 +36,7 @@ module "K8s_prod" {
    "europe-west1-c" ,
    "europe-west1-d"
   ]
+  logging = "logging.googleapis.com/kubernetes"
 }
 
  

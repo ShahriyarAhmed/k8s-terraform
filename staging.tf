@@ -20,13 +20,26 @@ module "Storage-burj-line" {
 }
 module "VPC" {
     source = "./VPC"
-
+    additional-subnets = [
+  {
+    name   = "stg-mumbai"
+    region = "asia-south1"
+    cidr   = "10.10.0.0/24"
+  },
+  {
+    name   = "stg-asia"
+    region = "asia-east1"
+    cidr   = "10.20.0.0/24"
+  },
+  {
+    name   = "stg-dammam"
+    region = "me-central2"
+    cidr   = "10.30.0.0/24"
+  }
+]
 }
 
-module "Compute" {
-    source = "./Compute"
-    name = "vm-ubuntu-sherry"
-}
+
 
 # module "ServiceAccounts" {
 #   source = "./IAM"
@@ -66,20 +79,20 @@ module "github-actions" {
 module "K8s_staging" {
   source = "./K8s"
   is_spot = "true"
-  subnet = module.VPC.subnet_name
+  subnet = "stg-qureos-private-subnet-subnetwork"
   network = module.VPC.vpc_name
   project_id = "qureos-mig-gke"
   region = "europe-west1"
-  min_node = 1
-  max_node = 1
-  machine_type = "e2-standard-2"
+  min_node = 3
+  max_node = 3
+  machine_type = "custom-4-12288"
   cluster_name = "qureos-staging-cluster"
   sa="k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
   k8s_version = "1.30.5-gke.1443001"
-  monitoring = "none"
   node_locations = [
    "europe-west1-b" 
   ]
+  logging = "none"
 }
 
 module "artifactregistry" {
@@ -132,4 +145,29 @@ module "shutdown-job" {
   image="europe-west1-docker.pkg.dev/qureos-mig-gke/qureos-stg-repo/shutdown:3"
   schedule_cron = "0 21 * * 1-5"
   timezone = "Asia/Karachi"
+}
+
+module "livekit-asia-south1" {
+    source = "./Compute"
+    name = "livekit-asia-south1"
+    machine_type = "e2-standard-2"
+    subnet = "stg-mumbai-subnetwork"
+    zone="asia-south1-a"
+    service_account_email = "k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
+}
+module "livekit-me-central2" {
+    source = "./Compute"
+    name = "livekit-me-central2"
+    machine_type = "e2-standard-2"
+    subnet = "stg-dammam-subnetwork"
+    zone= "me-central2-a"
+    service_account_email = "k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
+}
+module "livekit-asia-east1" {
+    source = "./Compute"
+    name = "livekit-asia-east1"
+    machine_type = "e2-standard-2"
+    subnet = "stg-asia-subnetwork"
+    zone="asia-east1-a"
+    service_account_email = "k8s-nodepool-sa@qureos-mig-gke.iam.gserviceaccount.com"
 }

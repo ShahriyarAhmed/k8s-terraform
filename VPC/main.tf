@@ -13,6 +13,17 @@ network=google_compute_network.this.id
 private_ip_google_access =true
 depends_on = [google_compute_network.this]
 }
+
+resource "google_compute_subnetwork" "additional-subnet" {
+  for_each = { for s in var.additional-subnets : s.name => s }
+
+  name                     = "${each.value.name}-subnetwork"
+  ip_cidr_range            = each.value.cidr
+  region                   = each.value.region
+  network                  = "${var.name}-vpc"
+  private_ip_google_access = true
+}
+
 # Static External IP for the NAT Gateway
 resource "google_compute_address" "nat-ip" {
   name = "${var.name}-nat-ip"

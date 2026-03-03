@@ -8,7 +8,7 @@ variable "machine_type" {
     default =   "e2-medium"
 }
 variable "image" {
-    default =   "projects/ubuntu-os-cloud/global/images/family/ubuntu-2004-lts"
+    default =   "projects/ubuntu-os-cloud/global/images/family/ubuntu-2204-lts"
 }
 variable "network" {
     default = "stg-qureos-mig-vpc"
@@ -16,5 +16,8 @@ variable "network" {
 
 variable "subnet" {
     default = "stg-qureos-private-subnet-subnetwork"
+}
+variable "service_account_email" {
+  
 }
 

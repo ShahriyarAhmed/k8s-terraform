@@ -16,4 +16,8 @@ resource "google_compute_instance" "this" {
     }
   }
   #desired_status = "TERMINATED"
+  service_account {
+    email  = var.service_account_email
+    scopes = ["https://www.googleapis.com/auth/cloud-platform"]
+  }
 }

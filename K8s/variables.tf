@@ -34,3 +34,6 @@ variable "monitoring"{
 variable node_locations{
     type=list(string)
 }
+variable logging{
+    
+}
